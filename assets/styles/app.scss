@@ -1,0 +1,19 @@
+@import "~bootstrap/scss/bootstrap";
+@import '~datatables.net-bs5/css/dataTables.bootstrap5.min';
+.tete {
+    background-color: #004387;
+}
+th,td,label,.dataTables_info,.paginate_button {
+    font-size: 13px;
+}
+.paginate_button,.dt-button {
+    font-size: small;
+    color: #004387;
+    background-color: #ffd500;
+}
+input,select{
+    font-size: small;
+    width: 200px;
+    height: 30px;
+    font-size: 13px;
+}

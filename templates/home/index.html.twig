@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Envoi rapida {% endblock %}
+
+
+{% block body %}
+    <div class="row mt-4"> 
+        <div class="col">
+        <h3 class="fw bolder text-center"> ENVOI </h3>
+        <h6 class="fw bold"> Du {{ debut|format_datetime('short', 'none', locale='fr') }} au {{ fin|format_datetime('short', 'none', locale='fr') }} </h6>
+            <table id="myTable" class="table table-striped" style="width:100%">
+                <thead>
+                    <tr>
+                        {% for key , value in titre %}
+                            <th style="background-color: #ffd500"> {{ key }} </th>
+                        {% endfor %}
+                       
+                    </tr>
+	
+                </thead>
+                <tbody>
+                {% for result in resultat %}
+                        <tr>
+                    {% for key, value in result %}
+                        {% if 'date' in key %}
+                            <td>{{ value|format_datetime('short', 'none', locale='fr') }}</td>
+                        {% else %} 
+                            <td>{{ value }}</td>
+                        {% endif %}
+                    {% endfor %}
+                    </tr>
+                {% endfor %}
+                </tbody>
+                <tfoot>  
+                </tfoot>
+            </table>
+        </div>
+    </div>
+{% endblock %}
